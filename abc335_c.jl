@@ -19,7 +19,9 @@ function main()
                 new_head[1] -= 1
             end
 
-            dragons = vcat([new_head], dragons[begin:end-1])
+            # dragons = vcat([new_head], dragons[begin:end-1])
+            pushfirst!(dragons, new_head)
+            pop!(dragons)
         elseif command == "2"
             value = parse(Int, value)
 
