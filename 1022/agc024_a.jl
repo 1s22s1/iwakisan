@@ -2,9 +2,9 @@ function main()
     a, b, c, k = parseints()
 
     if iseven(k)
-        println(a-b)
+        println(a - b)
     else
-        println(b-a)
+        println(b - a)
     end
 end
 
