@@ -12,13 +12,13 @@ function main()
         pushfirst!(right_sn, gcd(right_sn[begin], a))
     end
 
-    outcome = -1
+    answer = -1
 
-    for i ∈ 1:n-1
-        outcome = max(outcome, gcd(left_sn[i], right_sn[i+1]))
+    for i ∈ 1:length(left_sn)-1
+        answer = max(answer, gcd(left_sn[i], right_sn[i+1]))
     end
 
-    println(outcome)
+    println(answer)
 end
 
 parseint() = readline() |> x -> parse(Int, x)
