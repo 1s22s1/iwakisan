@@ -1,17 +1,21 @@
 function main()
     w, b = parseints()
 
-    keyboard = " wbwbwwbwbwbw"^30
+    keyboard = "wbwbwwbwbwbw"^21
 
-    @show length(keyboard) - w - b + 1
-    for i ∈ 1:length(keyboard)-w-b+1
-        dict = Dict()
+    for i ∈ 1:length(keyboard)-w-b
+        w_cnt = b_cnt = 0
 
         for j ∈ i:i+w+b-1
-            dict[keyboard[j]] = get(dict, keyboard[j], 0) + 1
+            if keyboard[j] == 'w'
+                w_cnt += 1
+            # In case of b
+            else
+                b_cnt += 1
+            end
         end
 
-        if get(dict, 'w', 0) == w && get(dict, 'b', 0) == b
+        if w_cnt == w && b_cnt == b
             println("Yes")
 
             exit()
