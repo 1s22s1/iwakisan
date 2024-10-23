@@ -1,15 +1,7 @@
 function main()
-    n = parseint()
-    s = parsestring()
-    q = parseint()
+    x = parse(BigInt, readline())
 
-    for _ ∈ 1:q
-        c, d = parsestrings()
-
-        s = replace(s, c => d)
-    end
-
-    println(s)
+    println(x / 10 |> ceil |> Int)
 end
 
 parseint() = readline() |> x -> parse(Int, x)
