@@ -9,7 +9,7 @@ function main()
         for j ∈ i:i+w+b-1
             if keyboard[j] == 'w'
                 w_cnt += 1
-            # In case of b
+                # In case of b
             else
                 b_cnt += 1
             end
