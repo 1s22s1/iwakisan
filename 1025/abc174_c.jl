@@ -1,17 +1,20 @@
 function main()
-    x = parseint()
+    k = parseint()
+    answer = 1
+    r = 7
 
-    answer = x ÷ 11 * 2
+    for _ ∈ 1:k
+        if r % k == 0
+            println(answer)
 
-    if x % 11 == 0
-        # Do nothing
-    elseif 1 ≤ x % 11 ≤ 6
+            exit()
+        end
+
+        r = (10r + 7) % k
         answer += 1
-    else
-        answer += 2
     end
 
-    println(answer)
+    println(-1)
 end
 
 parseint() = readline() |> x -> parse(Int, x)
