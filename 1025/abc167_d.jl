@@ -1,33 +1,42 @@
-# 94123
-
 function main()
     n, k = parseints()
     an = parseints()
 
-    path = [1]
-    next = an[1]
+    paths = [1]
+    next = an[begin]
 
-    while next ∉ path
-        push!(path, next)
+    while next ∉ paths
+        push!(paths, next)
 
-        next = an[path[end]]
+        next = an[paths[end]]
     end
 
-    circle_begin = findfirst(x -> x == next, path)
-    circle_end = length(path)
-    circle_length = circle_end - circle_begin + 1
-    rest_length = circle_end - circle_length
+    loop_begin = findfirst(x -> x == next, paths)
+    loop_end = length(paths)
+    loop_length = loop_end - loop_begin + 1
+    rest_length = length(paths) - loop_length
 
-    if rest_length == 0
-        r = (k - rest_length) % circle_length
-    else
-        r = k % circle_length
-    end
+    # In case of path is all loop
+    if loop_end == loop_length
+        q = k % loop_length
 
-    if r == 0
-        println(path[begin])
+        if q == 0
+            println(paths[begin])
+        else
+            println(paths[q+1])
+        end
     else
-        println(path[r+1])
+        if k < rest_length
+            println(paths[k+1])
+        else
+            q = (k - rest_length + 1) % loop_length
+
+            if q == 0
+                println(paths[end])
+            else
+                println(paths[rest_length+q])
+            end
+        end
     end
 end
 
