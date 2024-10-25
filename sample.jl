@@ -1,0 +1,1 @@
+println("Migisikenbisha ga nigate")
