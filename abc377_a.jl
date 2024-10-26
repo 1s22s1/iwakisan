@@ -1,5 +1,11 @@
 function main()
-    bomora
+    s = split(parsestring(), "") |> sort |> join
+
+    if s == "ABC"
+        println("Yes")
+    else
+        println("No")
+    end
 end
 
 parseint() = readline() |> x -> parse(Int, x)
