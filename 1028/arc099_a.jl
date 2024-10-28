@@ -1,13 +1,17 @@
 function main()
-    n, a, b = parseints()
+    n, k = parseints()
+    an = parseints()
 
-    if iseven(b - a)
-        result = (b - a) ÷ 2
-    else
-        result = min(a - 1, n - b) + 1 + abs(b - a) ÷ 2
+    if n ≤ k
+        println(1)
+
+        return
     end
 
-    println(result)
+    result = 1
+    result += ceil((n - k) / (k - 1))
+
+    println(result |> Int)
 end
 
 parseint() = readline() |> x -> parse(Int, x)
