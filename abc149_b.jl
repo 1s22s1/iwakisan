@@ -1,15 +1,11 @@
 function main()
     a, b, k = parseints()
 
-    a -= k ÷ 2
-    b -= k ÷ 2
+    q, r = divrem(k, 2)
 
-    if isodd(k)
-        a -= 1
-    end
-
-    a = max(a, 0)
-    b = max(b, 0)
+    pair = min(a, b, q)
+    a -= (pair + r)
+    b -= pair
 
     println("$(a) $(b)")
 end
