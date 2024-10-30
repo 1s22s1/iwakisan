@@ -2,8 +2,15 @@ function main()
     n = parseint()
     an = parseints()
 
-    sort!(an)
-    result = sum(an[3n÷3+1:2*(3n÷3)])
+    sort!(an, rev=true)
+
+    result = 0
+    cur = 2
+
+    for i ∈ 1:n
+        result += an[cur]
+        cur += 2
+    end
 
     println(result)
 end
