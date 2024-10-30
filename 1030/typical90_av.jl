@@ -2,14 +2,10 @@ function main()
     n, k = parseints()
     abn = [parseints() for _ ∈ 1:n]
 
-    result = 0
-    cur = 1
+    scores = append!(map(x -> x[end], abn), map(x -> x[begin] - x[end], abn))
+    sort!(scores, rev = true)
 
-    while cur ≤ n && k > 0
-        if k ≥ 2
-            if abn[k][begin] > abn[k][end]+abn[k+1][end]
-        end
-    end
+    result = sum(scores[begin:k])
 
     println(result)
 end
