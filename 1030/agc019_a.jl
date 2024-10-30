@@ -1,11 +1,10 @@
 function main()
-    n, k = parseints()
-    abn = [parseints() for _ ∈ 1:n]
+    q, h, s, d = parseints()
+    n = parseint()
 
-    scores = append!(map(x -> x[2], abn), map(x -> x[1] - x[2], abn))
-    sort!(scores, rev = true)
+    one_liter_price = min(4q, 2h, s)
+    result = min(one_liter_price * n, d * (n ÷ 2) + one_liter_price * (n % 2))
 
-    result = sum(scores[begin:begin+k-1])
     println(result)
 end
 
