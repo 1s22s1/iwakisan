@@ -11,7 +11,27 @@ function main()
         push!(g[b], a)
     end
 
-    @show g
+    result = 0
+
+    for perm ∈ permutations(1:n)
+        satify = true
+
+        if perm[begin] ≠ 1
+            satify = false
+        end
+
+        for i ∈ 1:n-1
+            if perm[i+1] ∉ g[perm[i]]
+                satify = false
+            end
+        end
+
+        if satify
+            result += 1
+        end
+    end
+
+    println(result)
 end
 
 parseint() = readline() |> x -> parse(Int, x)
