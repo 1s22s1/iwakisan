@@ -7,13 +7,14 @@ function main()
         dict[a] = get(dict, a, 0) + 1
     end
 
-    sorted_dict = sort(collect(dict), rev=true)
+    # sorted_dict = sort(collect(dict), rev=true)
+    soretd_dict = sort(pairs(dict), by = x -> x[2], rev = true)
     rods = []
 
     for (k, v) ∈ sorted_dict
         if v ≥ 4
             if isempty(rods)
-                println(k*k)
+                println(k * k)
 
                 return
             else
@@ -33,7 +34,7 @@ function main()
     end
 
     if length(rods) == 2
-        println(rods[begin]*rods[end])
+        println(rods[begin] * rods[end])
     else
         println(0)
     end
