@@ -3,10 +3,11 @@ function main()
     an = parseints()
 
     dict = Dict()
-    for i ∈ eachindex(an)
-        v = get(dict, an[i], -1)
 
-        print("$(v) ")
+    for i ∈ eachindex(an)
+        value = get(dict, an[i], -1)
+
+        print("$(value) ")
 
         dict[an[i]] = i
     end

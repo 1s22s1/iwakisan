@@ -1,17 +1,17 @@
 function main()
-    n = parseint()
     an = parseints()
 
     dict = Dict()
-    for i ∈ eachindex(an)
-        v = get(dict, an[i], -1)
-
-        print("$(v) ")
-
-        dict[an[i]] = i
+    for a ∈ an
+        dict[a] = get(dict, a, 0) + 1
     end
 
-    println("")
+    result = 0
+    for (k, v) ∈ dict
+        result += v ÷ 2
+    end
+
+    println(result)
 end
 
 parseint() = readline() |> x -> parse(Int, x)

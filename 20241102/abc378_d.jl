@@ -7,11 +7,13 @@ function main()
     for y ∈ 1:h, x ∈ 1:w
         if s[y][x] == "."
             for (a, b) ∈ [[1, 0], [-1, 0], [0, -1], [0, 1]]
-                adjacent_x = x+a
-                adjacent_y = y+b
+                adjacent_x = x + a
+                adjacent_y = y + b
 
-                if 1 ≤ adjacent_x ≤ w && 1 ≤ adjacent_y ≤ h && s[adjacent_y][adjacent_x] == "."
-                    push!(g[(y-1)*w + x], (adjacent_y-1)*w + adjacent_x)
+                if 1 ≤ adjacent_x ≤ w &&
+                   1 ≤ adjacent_y ≤ h &&
+                   s[adjacent_y][adjacent_x] == "."
+                    push!(g[(y-1)*w+x], (adjacent_y - 1) * w + adjacent_x)
                 end
             end
         end

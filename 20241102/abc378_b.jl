@@ -3,16 +3,18 @@ function main()
     qrs = [parseints() for _ ∈ 1:n]
 
     q = parseint()
+
     for _ ∈ 1:q
         t, d = parseints()
+
         q, r = qrs[t]
 
         cur_q, cur_r = divrem(d, q)
 
         if cur_r ≤ r
-            println(d + (r - cur_r))
+            println(d + r - cur_r)
         else
-            println(q + d - (cur_r - r))
+            println(d + q - (cur_r - r))
         end
     end
 end
