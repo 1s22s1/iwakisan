@@ -22,7 +22,6 @@ function main()
 
     for i ∈ 1:h*w
         seen = bfs(g, i)
-        @show seen
         result += length(filter(x -> x == k, seen))
     end
 
