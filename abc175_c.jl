@@ -1,19 +1,20 @@
 function main()
     x, k, d = parseints()
 
-    if x ≥ k*d
-        println(abs(x - k * d))
+    x = abs(x)
+
+    if abs(x) ≥ k*d
+        println(abs(x) - k * d)
 
         return
     end
 
     pop_count = x ÷ d
-    k -= pop_count
 
-    if iseven(k)
-        println(abs(x - k * d))
+    if iseven(k-pop_count)
+        println(abs(x - pop_count * d))
     else
-        println(abs(x - (k + 1) * d))
+        println(abs(x - (pop_count + 1) * d))
     end
 end
 
