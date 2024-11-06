@@ -3,7 +3,7 @@ function main()
 
     x = abs(x)
 
-    if abs(x) ≥ k*d
+    if abs(x) ≥ k * d
         println(abs(x) - k * d)
 
         return
@@ -11,7 +11,7 @@ function main()
 
     pop_count = x ÷ d
 
-    if iseven(k-pop_count)
+    if iseven(k - pop_count)
         println(abs(x - pop_count * d))
     else
         println(abs(x - (pop_count + 1) * d))
