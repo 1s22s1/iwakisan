@@ -10,12 +10,12 @@ function main()
         t, a, b = parseints()
 
         if t == 1
-            if b ≤ n
+            if b < n
                 previous_s[a], previous_s[b] = previous_s[b], previous_s[a]
-            elseif a ≤ n ≤ b
-                previous_s[a], next_s[b-n] = next_s[b-n], previous_s[a]
-            elseif n ≤ b
+            elseif n ≤ a
                 next_s[a-n], next[b-n] = next[b-n], next[a-n]
+            else
+                previous_s[a], next_s[b-n] = next_s[b-n], previous_s[a]
             end
 
         elseif t == 2
